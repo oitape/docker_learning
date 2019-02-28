@@ -14,6 +14,9 @@
 * [PID命名空间](33001-yi-jie-jue-de-wen-ti-he-pid-ming-ming-kong-jian.md)
 * [消除元数据冲突](xiao-chu-yuan-shu-ju-chong-tu.md)
   * [灵活的容器标识](xiao-chu-yuan-shu-ju-chong-tu/ling-huo-de-rong-qi-biao-shi.md)
+  * [容器的状态和依赖](xiao-chu-yuan-shu-ju-chong-tu/rong-qi-de-zhuang-tai-he-yi-lai.md)
+* [构建与环境无关的系统](xiao-chu-yuan-shu-ju-chong-tu/gou-jian-yu-huan-jing-wu-guan-de-xi-tong.md)
+  * [只读文件系统](xiao-chu-yuan-shu-ju-chong-tu/gou-jian-yu-huan-jing-wu-guan-de-xi-tong/zhi-du-wen-jian-xi-tong.md)
 
 ## 二、镜像发布 打包软件
 
