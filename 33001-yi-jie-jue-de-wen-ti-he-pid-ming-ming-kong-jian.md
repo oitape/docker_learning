@@ -16,3 +16,5 @@
 > PID   USER     TIME  COMMAND
     1   root      0:00 sleep 30000
     6   root      0:00 ps
+
+使用```docker exec```命令可以在运行的容器中运行额外的进程。`ps` 命令显示所有正在运行的进程和它们的PID。
