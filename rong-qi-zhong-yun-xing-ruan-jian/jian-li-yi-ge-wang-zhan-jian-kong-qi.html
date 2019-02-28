@@ -1,0 +1,411 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>建立一个网站监控器 · Docker学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="songshuran_oitm">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="233001-lie-ju-3001-ting-zhi-3001-zhong-qi-3001-cha-kan-rong-qi-shu-chu.html" />
+    
+    
+    <link rel="prev" href="213001-ru-hexue-xi-docker-ming-ling.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://songshuran.github.io" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">前言</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">一、整洁的机器</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Docker的世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../rong-qi-zhong-yun-xing-ruan-jian.html">
+            
+                <a href="../rong-qi-zhong-yun-xing-ruan-jian.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    容器中运行软件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="213001-ru-hexue-xi-docker-ming-ling.html">
+            
+                <a href="213001-ru-hexue-xi-docker-ming-ling.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    如何学习docker命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.2" data-path="jian-li-yi-ge-wang-zhan-jian-kong-qi.html">
+            
+                <a href="jian-li-yi-ge-wang-zhan-jian-kong-qi.html">
+            
+                    
+                        <b>2.2.2.</b>
+                    
+                    建立一个网站监控器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="233001-lie-ju-3001-ting-zhi-3001-zhong-qi-3001-cha-kan-rong-qi-shu-chu.html">
+            
+                <a href="233001-lie-ju-3001-ting-zhi-3001-zhong-qi-3001-cha-kan-rong-qi-shu-chu.html">
+            
+                    
+                        <b>2.2.3.</b>
+                    
+                    列举、停止、重启、查看容器输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../33001-yi-jie-jue-de-wen-ti-he-pid-ming-ming-kong-jian.html">
+            
+                <a href="../33001-yi-jie-jue-de-wen-ti-he-pid-ming-ming-kong-jian.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    已解决的问题和PID命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">二、镜像发布 打包软件</li>
+        
+        
+    
+
+    
+        
+        <li class="header">三、多容器和多主机环境</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >建立一个网站监控器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <ul>
+<li>&#x8FD0;&#x884C;NGINX<pre class="language-"><code class="lang-sh">docker run --detach --name web nginx:latest
+</code></pre>
+<blockquote>
+<p>&#x8FD0;&#x884C;&#x6B64;&#x547D;&#x4EE4;&#xFF0C;Docker&#x5C06;&#x4ECE;Docker Hub&#x4E0A;&#x7684;NGINX&#x4ED3;&#x5E93;&#x4E0B;&#x8F7D;&#x3001;&#x5B89;&#x88C5;&#x3001;&#x8FD0;&#x884C;&#x8BE5;&#x955C;&#x50CF;&#x8F6F;&#x4EF6;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x8FD8;&#x6709;&#x4E00;&#x4E32;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#x7684;&#x6570;&#x5B57;</p>
+<pre class="language-"><code>785e0931595766c33ee34e393fdb15955371c60072c218b5b131232487bc1282
+</code></pre><p>&#x8FD9;&#x662F;&#x8FD0;&#x884C;NGINX&#x5BB9;&#x5668;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x6807;&#x8BC6;&#x7B26;&#x663E;&#x793A;&#x51FA;&#x6765;&#x540E;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF0C;&#x56E0;&#x4E3A;&#x4F7F;&#x7528;&#x4E86;--detach&#x9009;&#x9879;&#xFF0C;&#x5E76;&#x5728;&#x540E;&#x53F0;&#x542F;&#x52A8;&#x8BE5;&#x7A0B;&#x5E8F;</p>
+</blockquote>
+</li>
+</ul>
+<p>&#x9759;&#x9ED8;&#x8FD0;&#x884C;&#x5728;&#x5728;&#x540E;&#x53F0;&#x7684;&#x7A0B;&#x5E8F;&#x88AB;&#x79F0;&#x4F5C;&#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#xFF0C;&#x5F53;&#x4F60;&#x8981;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x5BB9;&#x5668;&#x7684;&#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#xFF0C;&#x8BB0;&#x5F97;&#x4F7F;&#x7528;<code>--detach</code>&#x6807;&#x5FD7;&#x6216;&#x8005;&#x5B83;&#x7684;&#x7F29;&#x5199;&#x5F62;&#x5F0F;<code>-d</code></p>
+<ul>
+<li><p>&#x8FD0;&#x884C;&#x90AE;&#x4EF6;&#x7A0B;&#x5E8F;</p>
+<pre class="language-"><code class="lang-sh">docker run -d --name mailer dockerinaction/ch2_mailer
+</code></pre>
+</li>
+<li><p>&#x8FD0;&#x884C;&#x4EA4;&#x4E92;&#x5F0F;&#x5BB9;&#x5668;</p>
+<pre class="language-"><code class="lang-sh">docker run --interactive --tty \
+  --link web:web \
+  --name web_test \
+  busybox:latest /bin/sh
+</code></pre>
+<blockquote>
+<p>--interactive&#xFF1A;&#x544A;&#x8BC9;Docker&#x4FDD;&#x6301;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x6D41;&#x5BF9;&#x5BB9;&#x5668;&#x5F00;&#x653E;&#xFF0C;&#x5373;&#x4F7F;&#x5BB9;&#x5668;&#x6CA1;&#x6709;&#x7EC8;&#x7AEF;&#x8FDE;&#x63A5;&#x3002;
+--tty&#xFF1A;&#x544A;&#x8BC9;Docker&#x4E3A;&#x5BB9;&#x5668;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x7EC8;&#x7AEF;&#xFF0C;&#x8FD9;&#x5C06;&#x5141;&#x8BB8;&#x4F60;&#x53D1;&#x9001;&#x4FE1;&#x53F7;&#x7ED9;&#x5BB9;&#x5668;&#x3002;</p>
+</blockquote>
+</li>
+</ul>
+<p>&#x7528;&#x4EA4;&#x4E92;&#x5F0F;&#x5BB9;&#x5668;&#x7684;&#x547D;&#x4EE4;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x542F;&#x52A8;&#x4E00;&#x4E2A;UNIX shell&#xFF0C;&#x547D;&#x4EE4;&#x88AB;&#x94FE;&#x63A5;&#x5230;&#x8FD0;&#x884C;NGINX&#x7684;&#x5BB9;&#x5668;&#x4E0A;&#x3002;</p>
+<ul>
+<li>&#x542F;&#x52A8;&#x76D1;&#x63A7;&#x5668;<pre class="language-"><code class="lang-sh">docker run -it \
+  --name agent \
+  --link web:insideweb \
+  --link mailer:insidemailer \
+  dockerinaction/ch2_agent
+</code></pre>
+&#x4F1A;&#x770B;&#x5230;&#x7EC8;&#x7AEF;&#x4E00;&#x76F4;&#x5728;&#x6253;&#x5370; <code>System up</code>
+&#x5982;&#x679C;&#x9700;&#x8981;&#x540E;&#x53F0;&#x8FD0;&#x884C; &#x6DFB;&#x52A0;<code>-d</code>&#x9009;&#x9879;&#x5373;&#x53EF;&#xFF0C;&#xFF08;&#x6CE8;&#x610F;&#xFF1A;&#x6682;&#x505C;agent&#x65F6;&#x3010;command + c&#x3011;&#x65F6;&#xFF0C;&#x8981;&#x5148;&#x6267;&#x884C;<code>docker rm agent</code>&#xFF0C;&#x518D;&#x6B21;&#x5C1D;&#x8BD5;&#x540E;&#x53F0;&#x8FD0;&#x884C;agent&#xFF0C;&#x4F60;&#x4F1A;&#x770B;&#x5230;&#x7EC8;&#x7AEF;&#x4E0D;&#x4F1A;&#x518D;&#x6709;&#x76F8;&#x5173;log&#x4FE1;&#x606F;&#xFF09;
+&#x53EF;&#x901A;&#x8FC7; <code>docker logs -f agent</code>&#x6765;&#x5B9E;&#x65F6;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="http://songshuran.github.io" target="_blank">oitm</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2019-02-28 15:29:18 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="213001-ru-hexue-xi-docker-ming-ling.html" class="navigation navigation-prev " aria-label="Previous page: 如何学习docker命令">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="233001-lie-ju-3001-ting-zhi-3001-zhong-qi-3001-cha-kan-rong-qi-shu-chu.html" class="navigation navigation-next " aria-label="Next page: 列举、停止、重启、查看容器输出">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"建立一个网站监控器","level":"2.2.2","depth":2,"next":{"title":"列举、停止、重启、查看容器输出","level":"2.2.3","depth":2,"path":"rong-qi-zhong-yun-xing-ruan-jian/233001-lie-ju-3001-ting-zhi-3001-zhong-qi-3001-cha-kan-rong-qi-shu-chu.md","ref":"rong-qi-zhong-yun-xing-ruan-jian/233001-lie-ju-3001-ting-zhi-3001-zhong-qi-3001-cha-kan-rong-qi-shu-chu.md","articles":[]},"previous":{"title":"如何学习docker命令","level":"2.2.1","depth":2,"path":"rong-qi-zhong-yun-xing-ruan-jian/213001-ru-hexue-xi-docker-ming-ling.md","ref":"rong-qi-zhong-yun-xing-ruan-jian/213001-ru-hexue-xi-docker-ming-ling.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","sharing-plus","include-codeblock","ace","-lunr","-search","search-pro","collapsible-menu","-livereload","prism","-highlight","url-embed","page-footer-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"ace":{},"page-footer-ex":{"copyright":"By [oitm](http://songshuran.github.io)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"url-embed":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","qq","linkedin","qzone","douban"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"songshuran_oitm","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Docker学习笔记","links":{"sidebar":{"Home":"http://songshuran.github.io"}},"gitbook":"*"},"file":{"path":"rong-qi-zhong-yun-xing-ruan-jian/jian-li-yi-ge-wang-zhan-jian-kong-qi.md","mtime":"2019-02-28T07:29:18.179Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-28T07:31:53.988Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
