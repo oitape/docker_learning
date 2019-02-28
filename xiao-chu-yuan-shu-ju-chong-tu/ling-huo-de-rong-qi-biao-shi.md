@@ -29,11 +29,23 @@ CID=$(docker create nignx)
 echo $CID
 ```
 
+将容器ID写入到文件中
+```sh
+docker create --cidfile /tmp/web.cid nginx
+#执行cat 命令查看
+cat /tmp/web.cid
+```
 
-    
-    
-    
-    
+获取最后创建的那个容器的截断ID，可以这么做
+```sh
+docker ps --latest --quiet
+缩写形式如下
+docker ps -l -q
+```    
+如果你想获取完整的容器ID，可以带上如下选项
+```sh
+docker ps --no-trunc
+```
     
     
     
