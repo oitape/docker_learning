@@ -12,3 +12,8 @@
 > PID   USER     TIME  COMMAND
     1 root      0:00 sleep 30000
    13 root      0:00 ps
+
+运行 ```docker exec namespaceB ps```
+> PID   USER     TIME  COMMAND
+    1 root      0:00 sleep 30000
+    6 root      0:00 ps
