@@ -36,7 +36,6 @@ docker logs mailer
 如果看到终端输出
 >Sending email: To: admin@work  Message: The service is down!
 
-
 说明监控成功检测到Web同期中NGINX服务器已经停止。
 
 
