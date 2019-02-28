@@ -6,13 +6,13 @@ docker run -d --name webid nginx
 >docker: Error response from daemon: Conflict. The container name "/webid" is already in use by container "1f405a5b8b496ccaca2425924585d2c41fb9646ac886e490a96cf885dbcf83c0". You have to remove (or rename) that container to be able to reuse that name.
 See 'docker run --help'. 
 
-默认情况下，Docker给配一个为一的名字给他创建的每个容器。`--name`只是重写了该已知值的进程。如果出现以上冲突可以通过修改名字进行，
+默认情况下，Docker给配一个为一的名字给他创建的每个容器。`--name`只是重写了该已知值的进程。如果出现以上冲突可以通过修改名字进行
 ```sh
 docker rename webid webid-old
 ```
 通过`docker ps`查看第一个运行的名字是否改成功
 重命名可以减轻一次命名冲突，但无法避免首要问题。除了名字，Docker分配一个唯一的标识符，是一个十六进制编码的1024位数字，如`1f405a5b8b496ccaca2425924585d2c41fb9646ac886e490a96cf885dbcf83c0`
-，我们也可以通过该ID执行 `stop | exec` 命令。
+，我们也可以通过该ID执行 `stop | exec` 命令，即完整的`CONTAINER ID`。
 
 一般docker生成的ID基本是唯一的，产生冲突几乎不可能，所以大多数Docker界面上你可以看到被截断成12个字符，在获取容器，可以使用他们
 ```sh
