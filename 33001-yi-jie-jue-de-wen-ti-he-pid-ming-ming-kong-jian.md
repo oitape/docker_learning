@@ -6,14 +6,13 @@
  docker run -d --name namespaceA busybox:latest /bin/sh -c 'sleep 30000'
  
  docker run -d --name namespaceB busybox:latest /bin/sh -c 'sleep 30000'
- 
 ```
 运行 ```docker exec namespaceA ps```
 > PID   USER     TIME  COMMAND
-    1 root      0:00 sleep 30000
-   13 root      0:00 ps
+    1   root      0:00 sleep 30000
+   13   root      0:00 ps
 
 运行 ```docker exec namespaceB ps```
 > PID   USER     TIME  COMMAND
-    1 root      0:00 sleep 30000
-    6 root      0:00 ps
+    1   root      0:00 sleep 30000
+    6   root      0:00 ps
