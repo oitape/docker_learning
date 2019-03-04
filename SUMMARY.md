@@ -17,6 +17,8 @@
   * [容器的状态和依赖](xiao-chu-yuan-shu-ju-chong-tu/rong-qi-de-zhuang-tai-he-yi-lai.md)
 * [构建与环境无关的系统](xiao-chu-yuan-shu-ju-chong-tu/gou-jian-yu-huan-jing-wu-guan-de-xi-tong.md)
   * [只读文件系统](xiao-chu-yuan-shu-ju-chong-tu/gou-jian-yu-huan-jing-wu-guan-de-xi-tong/zhi-du-wen-jian-xi-tong.md)
+  * [环境变量的注入](xiao-chu-yuan-shu-ju-chong-tu/gou-jian-yu-huan-jing-wu-guan-de-xi-tong/huan-jing-bian-liang-de-zhu-ru.md)
+* [建立持久化的容器](xiao-chu-yuan-shu-ju-chong-tu/gou-jian-yu-huan-jing-wu-guan-de-xi-tong/jian-li-chi-jiu-hua-de-rong-qi.md)
 
 ## 二、镜像发布 打包软件
 
