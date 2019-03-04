@@ -24,3 +24,31 @@ Docker提供用于监控和重启容器的几个选项：
   ```sh
   docker exec lamp-test ps
   ```
+  通过指定PID通过kill命令杀死进程
+  ```sh
+  exec lamp-test kill <PID>
+  选择apache2的PID进行替换杀死
+  ```
+  当apache2停止时，supervisord进程会记录该事件，并重启该进程。
+  通过`docker logs lamp-test`来查看日志
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

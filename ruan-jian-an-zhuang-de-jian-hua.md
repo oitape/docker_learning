@@ -1,0 +1,2 @@
+- Docker Hub和其他注册服务器
+- 使用docker save 和docker load命令加载
