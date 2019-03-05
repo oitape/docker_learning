@@ -21,6 +21,7 @@
   * [建立持久化的容器](xiao-chu-yuan-shu-ju-chong-tu/gou-jian-yu-huan-jing-wu-guan-de-xi-tong/jian-li-chi-jiu-hua-de-rong-qi.md)
   * [清理](qing-li.md)
 * [软件安装的简化](ruan-jian-an-zhuang-de-jian-hua.md)
+* [持久化和卷间状态共享](chi-jiu-hua-he-juan-jian-zhuang-tai-gong-xiang.md)
 
 ## 二、镜像发布 打包软件
 
