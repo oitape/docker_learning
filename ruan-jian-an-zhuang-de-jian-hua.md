@@ -57,6 +57,18 @@ docker load -i ~/Desktop/myfile.tar
 
 
 - 从其他来源下载项目，并利用提供的Dockerfile自检镜像。
+分发Dockerfile类似于分发镜像文件。一般常用Git。
+```sh
+git clone https://github.com/dockerinaction/ch3_dockerfile.git
+```
+下载完成会看到一个ch3_dockerfile，然后运行如下命令指定ch3_dockerfile路径
+``sh
+docker build -t dia_ch3/dockerfile ch3_dockerfile
+```
+然后使用`docker images`命令你会看到dia_ch3/dockerfile镜像在列表当中。
+
+
+
 
 
 
