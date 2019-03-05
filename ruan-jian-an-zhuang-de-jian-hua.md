@@ -68,6 +68,22 @@ docker build -t dia_ch3/dockerfile ch3_dockerfile
 然后使用`docker images`命令你会看到dia_ch3/dockerfile镜像在列表当中。
 
 
+### 安装文件和隔离
+#### 镜像层实战
+下面会有两个镜像安装的示例，注意安装每个竟像时Docker做了什么。  
+```sh
+docker pull dockerinaction/ch3_myapp
+docker pull dockerinaction/ch3_myotherapp
+```
+你会发现运行第一条命令时需要下载等待的时间相对较长，因为它需要openjdk 6镜像。当Docker去安装依赖时，才发现原来该层的依赖关系，且是第一次下载。一旦安装了该层的所有遗爱，该层安装才会结束，openjdk-6会被安装，然后再安装ch3_myapp层。
+使用`docker images`将会看到刚才拉去的两个镜像.
+
+
+#### 分层关系
+镜像维护着父/子依赖关系。在这些依赖关系中，从父层构建形成新的一层。容器中的文件是镜像所创建容器的`所有层`的合集。镜像可以和任何其他镜像有依赖关系。
+
+
+
 
 
 
