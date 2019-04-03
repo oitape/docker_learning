@@ -40,9 +40,12 @@ Cassandra应该返回的是`(0 rows)`的空列表，下面使用命令进行创�
 ```sql
 create keyspace docker_hello_world with replication = { 'class':'SimpleStrategy', 'replication_factor':1 };
 ```
-
-
-
+然后再执行上面的查询会看到插入的结果。使用`quit`命令退出CQLSH程序并停止容器
+容器在创建时，使用了`--rm`标志，在命令停止会被自动删除。通过停止和删除所创建的Cassandra节点
+```sh
+docker stop cass1
+docker rm -vf cass1
+```
 
 
 
