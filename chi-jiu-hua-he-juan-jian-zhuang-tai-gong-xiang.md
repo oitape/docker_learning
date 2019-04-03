@@ -100,6 +100,16 @@ docker run -d --name bmweb -v ~/example-docs:/usr/local/apache2/htdocs -p 8090:8
 当你要安装一个特定的文件到一个包含其他文件的目录。如果你用整个目录绑定挂载到该位置，那么其他文件都将丢失，通过使用一个特定文件作为存储卷，可以只覆盖或插入单个文件。
 > 注意：文件必须在创建容器之前就存在于主机上，否则Docker将自动创建一个目录，把它挂在在需要的文职
 
+#### Docker管理卷
+Docker管理卷不同于绑定挂载卷，因为Docker守护程序会在主机文件系统中创建存储卷，并有Docker管理。
+
+使用管理卷是一种在文件系统特定位置解耦卷的方法。当你执行 docker run 使用-v选项，只要指定容器目录树中的挂载点，管理卷即可创建。在前面的Cassandra示例已经创建了管理卷
+```sh
+// 容器中指定存储卷的挂载点
+docker run -d --volume /var/lib/cassandra/data --name cass-shared alpine echo Data Container
+```
+
+
 
 
 
