@@ -72,7 +72,10 @@ select * from system.schema_keyspaces where keyspace_name = 'docker_hello_world'
 - 将数据分享给运行在容器外的进程，比如主机系统组件
 - 将主机数据通过已知的主机目录分享给容器中运行的程序
 
-
+下面使用DOcker启动web服务器，并绑定挂载你的文档地址在web服务器新容器的文档根目录上。在主机目录创建一个example-docs的新目录，并创建一个名为index.html的文件。
+```sh
+docker run -d --name bmweb -v ~/example-docs:/usr/local/apache2/htdocs -p 8090:80 httpd:latest
+```
 
 
 
