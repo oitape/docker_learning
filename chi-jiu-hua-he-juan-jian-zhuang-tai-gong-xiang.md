@@ -36,6 +36,26 @@ docker run -it --rm --link cass1:cass cassandra:2.2 cqlsh cass
  select * from system.schema_keyspaces where keyspace_name = 'docker_hello_world';
 ```
 
+Cassandra应该返回的是`(0 rows)`的空列表，下面使用命令进行创建
+```sql
+create keyspace docker_hello_world with replication = { 'class':'SimpleStrategy', 'replication_factor':1 };
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
