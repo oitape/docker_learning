@@ -86,7 +86,10 @@ docker run -d --name bmweb -v ~/example-docs:/usr/local/apache2/htdocs -p 8090:8
 使用-v选项和位置映射来创建绑定挂载卷。该映射以冒号分割。冒号左边是：主机文件系统上的绝对路径，冒号右边是：容器中挂载的目标存储位置。必须使用绝对路径指定该位置。
 你在主机上访问`http://localhost:8090/` 会出现hello world
 
+如果你想确保在Apache HTTP web服务器不能更改此卷内容，可以通过在存储卷映射规则后追加：`ro`来完成。
+```sh
 
+```
 
 
 
