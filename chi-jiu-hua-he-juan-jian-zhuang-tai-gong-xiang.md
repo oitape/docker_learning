@@ -120,7 +120,17 @@ docker inspect cass-shared | grep Mounts -A 10
 容器之间存储卷的共享
 
 #### 主机依赖的共享
+多个容器主机依赖的共享：每个容器在主机文件系统的已知位置有一个绑定挂载卷。
+下面创建两个容器，一个名为plath的容器写文件，一个容器则读该文件。这两个容器都有一个共同的绑定挂挂载卷。
+```
+mkdir web-logs-example
 
+docker run --name plath -d -v ~/web-logs-example:/data dockerinaction/ch4_writer_a
+
+docker run --rm -v ~/web-logs-example:/reader-data alpine:latest head /reader-data/logA
+```
+
+#### 共享和columes-from 标志
 
 
 
