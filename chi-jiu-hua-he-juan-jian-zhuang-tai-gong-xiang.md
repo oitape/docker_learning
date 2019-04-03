@@ -51,9 +51,18 @@ docker rm -vf cass1
 ![](/assets/Snip20190403_1.png)
 
 下面使用三个命令将测试数据恢复
+```sh
+docker run -d --volumes-from cass-shared --name cass2 cassandra:2.2
+
+docker run -it --rm --link cass2:cass cassandra:2.2 cqlsh cass
+
+select * from system.schema_keyspaces where keyspace_name = 'docker_hello_world';
+```
+会发现有一条数据
 
 
-
+### 存储卷类型
+存储卷有两种类型，每一个存储卷就是容器目录树的挂载点在主机目录树中的位置，但不同的存储卷类型在主机的位置是不同的，
 
 
 
