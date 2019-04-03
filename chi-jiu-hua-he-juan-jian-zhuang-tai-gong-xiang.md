@@ -46,8 +46,11 @@ create keyspace docker_hello_world with replication = { 'class':'SimpleStrategy'
 docker stop cass1
 docker rm -vf cass1
 ```
+执行完成后，Cassandra客户端和服务器都将被删除。如果刚才所做的修改需要持久化，唯一办法就是存储卷容器。
+可以重复上面的步骤进行测试，下图描述了整个系统。
+![](/assets/Snip20190403_1.png)
 
-
+下面使用三个命令将测试数据恢复
 
 
 
