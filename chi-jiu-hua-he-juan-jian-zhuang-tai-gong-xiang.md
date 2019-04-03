@@ -88,10 +88,15 @@ docker run -d --name bmweb -v ~/example-docs:/usr/local/apache2/htdocs -p 8090:8
 
 如果你想确保在Apache HTTP web服务器不能更改此卷内容，可以通过在存储卷映射规则后追加：`ro`来完成。
 ```sh
-
+ docker rm -vf bmweb
+ 
+ docker run -d --name bmweb_ro -v ~/example-docs:/usr/local/apache2/htdocs/:ro -p 8090:80 httpd:latest
+ 
 ```
+通过挂载只读，可避免容器内的任何进程修改该卷内容
+> 注意：如果你指定了一个不存在的主机目录，Docker会为你创建相应的目录。
 
-
+绑定挂在卷并不仅限于目录，还可以绑定挂在卷装入单个文件。在创建或链接资源时，避免与其他资源的冲突，提供灵活性。
 
 
 
