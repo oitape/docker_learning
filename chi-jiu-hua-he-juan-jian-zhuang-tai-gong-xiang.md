@@ -17,11 +17,13 @@
 更为基本的是：存储卷可以隔离应用程序和主机的关系。镜像被装载到主机，创建出一个容器。Docker不知道主机在哪里运行，只能判断哪些文件在容器中可用。也就是Docker本身就没有办法利用主机上的设施，如装载的网络存储、混合光纤、固态硬盘。但有主机知识的用户可以使用存储卷，在容器中将这些目录映射到主机的存储上。
 
 #### NoSQL数据库使用存储卷
-创建已定义存储间的单个容器
+Apache Cassandra项目提供了一个具有内置集群，最终一致性和线性写入可伸缩的列数据库。下面使用官方的Cassandra镜像创建一个节点集群，并创建一个键空间，删除容器，然后再另一个容器中恢复这个新节点的键空间。
+
+创建已定义存储卷的单个容器，这也被称为存储卷容器（高级模式）
 ```sh
 docker run -d --volume /var/lib/cassandra/data --name cass-shared alpine echo Data Container
 ```
-存储卷容器将立即停止。不要删除他。会在创建运行Cassandra新容器使，使用这个存储卷：
+存储卷容器将立即停止。不要删除他。会在后面创建运行Cassandra新容器时，使用这个存储卷：
 ```sh
 docker run -d --volumes-from cass-shared --name cass1 cassandra:2.2
 ```
@@ -29,6 +31,12 @@ Docker下载完镜像，创建一个新容器，并复制存储卷容器的卷�
 ```sh
 docker run -it --rm --link cass1:cass cassandra:2.2 cqlsh cass
 ```
+接下来就可以从CQLSH命令行检查或修改Cassandra数据库。首先查找一个`docker_hello_world`的键空间
+```sql
+ select * from system.schema_keyspaces where keyspace_name = 'docker_hello_world';
+```
+
+
 
 
 
