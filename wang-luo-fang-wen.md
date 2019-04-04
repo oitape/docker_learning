@@ -37,6 +37,11 @@ docker run --rm --net none alpine ip addr
 ```
 可看到本地回环接口是唯一可用的网络接口，并且绑定在127.0.0.1上
 
+我们还可以进行测试看Close容器是否能访问到外部网络，尝试访问谷歌DNS服务器
+```sh
+docker run --rm --net none alpine ping -w 2 8.8.8.8
+```
+
 - ##### Bridged容器
 
 
