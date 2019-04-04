@@ -80,7 +80,12 @@ Bridged容器时最常见的网络容器原型。
    docker run --rm --dns-search docker.com busybox nslookup registry.hub
    ```
    ![](/assets/Snip20190404_3.png)
-   
+
+   - ###### 开放对容器的访问
+   Bridged容器默认情况下不能被主机网络访问。容器被主机的防火墙保护了起来。
+   docker run命令提供了一个`-p --publish=[]`选项，它能够在主机网络栈上的端口和容器端口之间创建映射关系。映射的格式有以下四种
+   ![](/assets/Snip20190404_4.png)
+
 
 
 
