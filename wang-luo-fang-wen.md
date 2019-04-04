@@ -47,8 +47,24 @@ docker run --rm --net none alpine ping -w 2 8.8.8.8
 Bridged容器放开了网络的隔离程度，可定制性最高。Bridged容器拥有两个接口，一个是私有的本地回环接口，另一个是私有接口通过网桥连接到主机的其他容器。
 Bridged容器时最常见的网络容器原型。
 
-###### 访问外部网络
-
+   - ###### 访问外部网络
+   选择Bridged容器通常是进程需要访问外部网络，使用docker run命令中的 --net选项，可以忽略，或者将--net的值设置为bridge.
+   ```
+   docker run --rm --net bridge alpine ip addr
+   ```
+   尝试下访问外部网络`docker run --rm alpine ping -w 2 8.8.8.8`
+   你会看到容器执行了2秒的ping测试并输出了相关ping的信息
+   
+   - ###### 自定义命名解析
+   域名系统DNS是将主机名映射成IP地址的协议。网桥网络上的容器和其他在该网络上的计算机，拥有不具备公共路由能力的IP地址是非常典型的。除非你运行有自己的DNS服务器，否则你不能通过名字来映射他们。
+   Docker提供了不同的选项来自定义DNS配置。
+   docker run命令有一个`--hostname`选项，你可以使用这个选项来设置一个新容器的主机名。这个选项会在该容器的DNS覆盖系统中添加一条记录。这条记录会将提供的主机名映射成该容器的桥接IP地址。
+   ```
+   docker run --rm --hostname barker alpine nslookup barker
+   ```
+   最后一行的IP地址就是新创建的容器的桥接IP地址。
+   
+   
 
 
 
