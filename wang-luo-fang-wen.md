@@ -60,10 +60,26 @@ Bridged容器时最常见的网络容器原型。
    Docker提供了不同的选项来自定义DNS配置。
    docker run命令有一个`--hostname`选项，你可以使用这个选项来设置一个新容器的主机名。这个选项会在该容器的DNS覆盖系统中添加一条记录。这条记录会将提供的主机名映射成该容器的桥接IP地址。
    ```
+   //nslookup barker 将主机名解析成IP地址
    docker run --rm --hostname barker alpine nslookup barker
    ```
-   最后一行的IP地址就是新创建的容器的桥接IP地址。
-   
+   最后一行的IP地址就是新创建的容器的桥接IP地址。为容器设置主机名是很有用的，比如容器中程序要查询它自己的IP地址或者必须自我识别时，因为其他容器不知道这个主机名，所以它的功能是有限的。但你使用一个外部DNS服务器，你就能共享这些主机名。
+   第二个自定义DNS配置的选项能够指定一个或者多个DNS服务器。
+   ```
+   docker run --rm --dns 8.8.8.8 alpine nslookup docker.com
+   ```
+   创建容器，并将它的DNS服务器设置为Google的公开DNS服务器，解析docker.com
+的IP地址。
+   如果你在笔记本上运行Docker，并且经常在在不同的网路供应商之间移动，那么使用一个特定的DNS服务武器能够提供一直性。对构建服务和网络这是一个非常重要的工具。
+   设置DNS服务器需要注意
+    - 值必须是IP地址
+    - --dns=[]选项可以被使用多次来设置多个DNS服务器
+    - --dns=[]选项可以在你启动后台进程Docker daemon时进行设置。这么做这些DNS服务器会默认配置到每一个容器上。
+   第三个DNS相关的选项`--dns-search`，允许指定一个DNS查找域，当设置该选项后（不包括已知顶级域名.com .cn等），在查询时，任何不包括已知域名的主机名都会自动加上该后缀名。
+   ```
+   docker run --rm --dns-search docker.com busybox nslookup registry.hub
+   ```
+   ![](/assets/Snip20190404_3.png)
    
 
 
