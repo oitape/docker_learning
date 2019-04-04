@@ -41,8 +41,19 @@ docker run --rm --net none alpine ip addr
 ```sh
 docker run --rm --net none alpine ping -w 2 8.8.8.8
 ```
+可以发现输出结果`ping: sendto: Network unreachable`
 
 - ##### Bridged容器
+Bridged容器放开了网络的隔离程度，可定制性最高。Bridged容器拥有两个接口，一个是私有的本地回环接口，另一个是私有接口通过网桥连接到主机的其他容器。
+Bridged容器时最常见的网络容器原型。
+
+###### 访问外部网络
+
+
+
+
+
+
 
 
 
