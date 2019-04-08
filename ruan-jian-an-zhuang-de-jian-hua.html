@@ -65,6 +65,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="chi-jiu-hua-he-juan-jian-zhuang-tai-gong-xiang.html" />
+    
     
     <link rel="prev" href="qing-li.html" />
     
@@ -371,6 +373,36 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="chi-jiu-hua-he-juan-jian-zhuang-tai-gong-xiang.html">
+            
+                <a href="chi-jiu-hua-he-juan-jian-zhuang-tai-gong-xiang.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    持久化和卷间状态共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="wang-luo-fang-wen.html">
+            
+                <a href="wang-luo-fang-wen.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    网络访问
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -490,7 +522,17 @@ docker build -t dia_ch3/dockerfile ch3_dockerfile
 ```
 &#x7136;&#x540E;&#x4F7F;&#x7528;</code>docker images`&#x547D;&#x4EE4;&#x4F60;&#x4F1A;&#x770B;&#x5230;dia_ch3/dockerfile&#x955C;&#x50CF;&#x5728;&#x5217;&#x8868;&#x5F53;&#x4E2D;&#x3002;</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="http://songshuran.github.io" target="_blank">oitm</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2019-03-05 15:59:35 </span> </footer>
+<h3 id="&#x5B89;&#x88C5;&#x6587;&#x4EF6;&#x548C;&#x9694;&#x79BB;">&#x5B89;&#x88C5;&#x6587;&#x4EF6;&#x548C;&#x9694;&#x79BB;</h3>
+<h4 id="&#x955C;&#x50CF;&#x5C42;&#x5B9E;&#x6218;">&#x955C;&#x50CF;&#x5C42;&#x5B9E;&#x6218;</h4>
+<p>&#x4E0B;&#x9762;&#x4F1A;&#x6709;&#x4E24;&#x4E2A;&#x955C;&#x50CF;&#x5B89;&#x88C5;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x6CE8;&#x610F;&#x5B89;&#x88C5;&#x6BCF;&#x4E2A;&#x7ADF;&#x50CF;&#x65F6;Docker&#x505A;&#x4E86;&#x4EC0;&#x4E48;&#x3002;  </p>
+<pre class="language-"><code class="lang-sh">docker pull dockerinaction/ch3_myapp
+docker pull dockerinaction/ch3_myotherapp
+</code></pre>
+<p>&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x8FD0;&#x884C;&#x7B2C;&#x4E00;&#x6761;&#x547D;&#x4EE4;&#x65F6;&#x9700;&#x8981;&#x4E0B;&#x8F7D;&#x7B49;&#x5F85;&#x7684;&#x65F6;&#x95F4;&#x76F8;&#x5BF9;&#x8F83;&#x957F;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x9700;&#x8981;openjdk 6&#x955C;&#x50CF;&#x3002;&#x5F53;Docker&#x53BB;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x65F6;&#xFF0C;&#x624D;&#x53D1;&#x73B0;&#x539F;&#x6765;&#x8BE5;&#x5C42;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4E14;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x4E0B;&#x8F7D;&#x3002;&#x4E00;&#x65E6;&#x5B89;&#x88C5;&#x4E86;&#x8BE5;&#x5C42;&#x7684;&#x6240;&#x6709;&#x9057;&#x7231;&#xFF0C;&#x8BE5;&#x5C42;&#x5B89;&#x88C5;&#x624D;&#x4F1A;&#x7ED3;&#x675F;&#xFF0C;openjdk-6&#x4F1A;&#x88AB;&#x5B89;&#x88C5;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5B89;&#x88C5;ch3_myapp&#x5C42;&#x3002;
+&#x4F7F;&#x7528;<code>docker images</code>&#x5C06;&#x4F1A;&#x770B;&#x5230;&#x521A;&#x624D;&#x62C9;&#x53BB;&#x7684;&#x4E24;&#x4E2A;&#x955C;&#x50CF;.</p>
+<h4 id="&#x5206;&#x5C42;&#x5173;&#x7CFB;">&#x5206;&#x5C42;&#x5173;&#x7CFB;</h4>
+<p>&#x955C;&#x50CF;&#x7EF4;&#x62A4;&#x7740;&#x7236;/&#x5B50;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;&#x5728;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4E2D;&#xFF0C;&#x4ECE;&#x7236;&#x5C42;&#x6784;&#x5EFA;&#x5F62;&#x6210;&#x65B0;&#x7684;&#x4E00;&#x5C42;&#x3002;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x662F;&#x955C;&#x50CF;&#x6240;&#x521B;&#x5EFA;&#x5BB9;&#x5668;&#x7684;<code>&#x6240;&#x6709;&#x5C42;</code>&#x7684;&#x5408;&#x96C6;&#x3002;&#x955C;&#x50CF;&#x53EF;&#x4EE5;&#x548C;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x955C;&#x50CF;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="http://songshuran.github.io" target="_blank">oitm</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2019-04-08 11:34:08 </span> </footer>
                                 
                                 </section>
                             
@@ -517,10 +559,14 @@ docker build -t dia_ch3/dockerfile ch3_dockerfile
 
             
                 
-                <a href="qing-li.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 清理">
+                <a href="qing-li.html" class="navigation navigation-prev " aria-label="Previous page: 清理">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="chi-jiu-hua-he-juan-jian-zhuang-tai-gong-xiang.html" class="navigation navigation-next " aria-label="Next page: 持久化和卷间状态共享">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -529,7 +575,7 @@ docker build -t dia_ch3/dockerfile ch3_dockerfile
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"软件安装的简化","level":"2.3","depth":1,"previous":{"title":"清理","level":"2.2.7","depth":2,"path":"qing-li.md","ref":"qing-li.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","sharing-plus","include-codeblock","ace","-lunr","-search","search-pro","collapsible-menu","-livereload","prism","-highlight","url-embed","page-footer-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"ace":{},"page-footer-ex":{"copyright":"By [oitm](http://songshuran.github.io)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"url-embed":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","qq","linkedin","qzone","douban"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"songshuran_oitm","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Docker学习笔记","links":{"sidebar":{"Home":"http://songshuran.github.io"}},"gitbook":"*"},"file":{"path":"ruan-jian-an-zhuang-de-jian-hua.md","mtime":"2019-03-05T07:59:35.402Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-05T08:00:53.501Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"软件安装的简化","level":"2.3","depth":1,"next":{"title":"持久化和卷间状态共享","level":"2.4","depth":1,"path":"chi-jiu-hua-he-juan-jian-zhuang-tai-gong-xiang.md","ref":"chi-jiu-hua-he-juan-jian-zhuang-tai-gong-xiang.md","articles":[]},"previous":{"title":"清理","level":"2.2.7","depth":2,"path":"qing-li.md","ref":"qing-li.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","sharing-plus","include-codeblock","ace","-lunr","-search","search-pro","collapsible-menu","-livereload","prism","-highlight","url-embed","page-footer-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"collapsible-menu":{},"ace":{},"page-footer-ex":{"copyright":"By [oitm](http://songshuran.github.io)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"url-embed":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","qq","linkedin","qzone","douban"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"songshuran_oitm","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Docker学习笔记","links":{"sidebar":{"Home":"http://songshuran.github.io"}},"gitbook":"*"},"file":{"path":"ruan-jian-an-zhuang-de-jian-hua.md","mtime":"2019-04-08T03:34:08.840Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-08T03:34:44.788Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
