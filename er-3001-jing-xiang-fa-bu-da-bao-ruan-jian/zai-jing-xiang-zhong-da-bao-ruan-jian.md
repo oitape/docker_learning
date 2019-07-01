@@ -20,3 +20,4 @@ docker rm -vf hw_container
 ```sh
 docker run --rm hw_image ls -l /HelloWorld
 ```
+
