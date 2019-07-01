@@ -1,8 +1,6 @@
-# 从```Docker实战``` 这本书中的学习总结，记录历程。如果你也想学习Docker，希望这本书能帮助到你，节省你的时间！祝好！
+# 从```Docker实战``` 这本书中的学习总结，记录历程。如果你也想学习Docker，可以看下这份[笔记](http://oitm.top/docker_learning/)，希望这份总结能帮助到你！
 
 -----
 
 # Welcome to Docker!
-
-# Happy Everyone!
 
