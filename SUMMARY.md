@@ -27,5 +27,7 @@
 
 ## 二、镜像发布 打包软件
 
+* [在镜像中打包软件](er-3001-jing-xiang-fa-bu-da-bao-ruan-jian/zai-jing-xiang-zhong-da-bao-ruan-jian.md)
+
 ## 三、多容器和多主机环境
 
