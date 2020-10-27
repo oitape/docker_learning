@@ -28,3 +28,21 @@
     yum list docker-ce.x86_64 --showduplicates | sort -r # 安装完成之后可以使用命令查看
     docker version
     ```
+    - 配置镜像加速
+        - 1.注册登录开通阿里云容器镜像服务 
+        - 2.查看控制台，招到镜像加速器并复制自己的加速器地址 
+        - 3.找到/etc/docker目录下的daemon.json文件，没有则直接vi daemon.json
+    ```
+    #填写自己的加速器地址 
+    {
+        "registry-mirrors": ["https://zfzbet67.mirror.aliyuncs.com"] 
+    }
+    ```
+    - 通知systemd重载此配置文件
+    ```
+    systemctl daemon-reload
+    ```
+    - 启动docker服务
+    ```
+    systemctl restart docker
+    ```
