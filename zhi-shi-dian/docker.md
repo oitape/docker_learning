@@ -46,3 +46,25 @@
     ```
     systemctl restart docker
     ```
+    
+- 启动一个mysql
+```
+    docker pull mysql:5.7
+    #创建三个要挂载的目录
+    mkdir -p /my/mysql/conf
+    mkdir -p /my/mysql/data
+    mkdir -p /my/mysql/logs
+    #复制文件 并修改字符
+    docker cp mysql:/etc/mysql/mysql.conf.d/mysqld.cnf /my/mysql/conf/ 
+    vi /my/mysql/conf/mysqld.conf
+    character-set-server=utf8 #最终启动命令 
+    
+    docker run \
+    --name mysql \
+    -p 3306:3306 \
+    -v /my/mysql/conf:/etc/mysql/mysql.conf.d/ \ 
+    -v /my/mysql/data:/var/lib/mysql \
+    -v /my/mysql/logs:/logs \
+    -e MYSQL_ROOT_PASSWORD=root \ 
+    -d mysql:5.7
+```
